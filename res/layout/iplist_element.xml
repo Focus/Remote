@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_width="fill_parent"
+  android:layout_height="17pt">
+    <TextView 
+    	android:id="@+id/ipel" 
+    	android:layout_height="fill_parent"  
+    	android:layout_width="0px"
+    	android:layout_gravity="left"
+    	android:textSize="12pt"
+    	android:layout_weight="1"
+    	android:layout_margin="4px"/>
+   <!--  <ImageView android:id="@+id/xb"
+        android:src="@drawable/mbutton"
+        android:clickable="true"
+    	android:layout_height="17pt"
+    	android:layout_width="17pt"
+    	android:layout_marginRight="20px"
+		android:layout_gravity="right" /> -->
+</LinearLayout>

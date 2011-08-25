@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, RemoteXActivity!</string>
+    <string name="app_name">RemoteX</string>
+    <string name="ipbar">IP Address</string>
+    <string name="iptitle">Enter Connection Details</string>
+ 	<string name="ipformat">Must be of the form 127.0.0.1</string>
+	<string name="ipport">Port</string>
+	<string name="ipbutton">Connect</string>
+	<string name="ipscreen">TCP/IP Connection</string>
+	<string name="instructs">RemoteX Instructions</string>
+	<string name="mainscreen">RemoteX</string>
+	<string name="preferences">Preferences</string>
+	<string name="about">RemoteX\n\n Written by Bati Sengul (Focus)</string>
+	<string name="iplist">Previous Connections</string>
+	<string name="mousescreen">Drag your finger around to move.\n\nTap to click\n\nPress and hold to drag windows around.\n\nGet the keyboard up using the menu button.</string>
+	
+	<string name="instruct">You need the server installed on your computer before you can use this app. Visit our website for more details.\n\n
+	Once the server is installed, run the server. The default port will be 1987 (which is the default if you leave it empty on the app as well).\n\n
+	To find your ip use  ifconfig  on *nix and  ipconfig  on Windows.\n\n
+	Tap to click and use the keyboard for typing. Enjoy!\n\n
+	Focus.
+	</string>
+</resources>

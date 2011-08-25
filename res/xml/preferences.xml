@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.focus.remote.SeekBarPreference android:key="sensitivity"
+        android:title="Sensitivity"
+        android:summary="Sensitivity of the mouse"
+        android:dialogMessage="Mouse sensitivity"
+        android:defaultValue="35"
+        android:text=""
+        android:max="150"/>
+</PreferenceScreen>
