@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView
-	android:id="@+id/debugscreen"
-    android:layout_width="fill_parent" 
-    android:layout_height="250px"
-    android:background="#000000"
-    android:textColor="#FFFFFF"
-    android:text="@string/instruct"
-    />
-    
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginBottom="11pt">
+			<ImageView android:src="@drawable/monitor"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_weight="1" android:layout_gravity="left|center" />
+			<TextView android:layout_width="wrap_content"
+				android:textSize="11pt" android:layout_height="wrap_content"
+				android:background="#000000" android:textColor="#CFCFCF"
+				android:text="@string/instruct_server" android:layout_weight="2" />
+
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="fill_parent">
+			<ImageView android:src="@drawable/comp_internet"
+				android:layout_gravity="left|center" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+			<TextView android:layout_width="fill_parent"
+				android:textSize="11pt" android:layout_height="wrap_content"
+				android:background="#000000" android:textColor="#CFCFCF"
+				android:text="@string/instruct_ip" android:layout_weight="2" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginTop="11pt">
+			<ImageView android:src="@drawable/internet"
+				android:layout_gravity="left|center" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+			<TextView android:layout_width="fill_parent"
+				android:textSize="11pt" android:layout_height="wrap_content"
+				android:background="#000000" android:textColor="#CFCFCF"
+				android:text="@string/instruct_port" android:layout_weight="2" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginTop="11pt">
+			<ImageView android:src="@drawable/pointing_finger"
+				android:layout_gravity="left|center" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+			<TextView android:layout_width="fill_parent"
+				android:textSize="11pt" android:layout_height="wrap_content"
+				android:background="#000000" android:textColor="#CFCFCF"
+				android:text="@string/instruct_finger" android:layout_weight="2" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginTop="11pt">
+			<ImageView android:src="@drawable/osi"
+				android:layout_gravity="left|center" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+			<TextView android:layout_width="fill_parent"
+				android:textSize="11pt" android:layout_height="wrap_content"
+				android:background="#000000" android:textColor="#CFCFCF"
+				android:text="@string/instruct_license" android:layout_weight="2" />
+		</LinearLayout>
+
+		<TextView android:layout_width="wrap_content" android:layout_marginTop="11pt"
+			android:layout_height="wrap_content" android:text="@string/instruct_signature"
+			android:textSize="11pt" />
+
+	</LinearLayout>
+</ScrollView>

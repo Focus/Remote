@@ -13,29 +13,33 @@ public final class R {
     public static final class drawable {
         public static final int button=0x7f020000;
         public static final int button_cyan=0x7f020001;
-        public static final int icon=0x7f020002;
-        public static final int mainback=0x7f020003;
-        public static final int mainback_pressed=0x7f020004;
-        public static final int mainbutton=0x7f020005;
-        public static final int mbutton=0x7f020006;
-        public static final int mbutton_normal=0x7f020007;
-        public static final int mbutton_pressed=0x7f020008;
-        public static final int xbutton=0x7f020009;
+        public static final int comp_internet=0x7f020002;
+        public static final int icon=0x7f020003;
+        public static final int internet=0x7f020004;
+        public static final int mainback=0x7f020005;
+        public static final int mainback_pressed=0x7f020006;
+        public static final int mainbutton=0x7f020007;
+        public static final int mbutton=0x7f020008;
+        public static final int mbutton_normal=0x7f020009;
+        public static final int mbutton_pressed=0x7f02000a;
+        public static final int monitor=0x7f02000b;
+        public static final int osi=0x7f02000c;
+        public static final int pointing_finger=0x7f02000d;
+        public static final int xbutton=0x7f02000e;
     }
     public static final class id {
-        public static final int ButtonIP=0x7f070004;
-        public static final int EditTextIP=0x7f070002;
-        public static final int EditTextPort=0x7f070003;
-        public static final int about=0x7f07000b;
-        public static final int close=0x7f07000c;
-        public static final int debugscreen=0x7f070000;
-        public static final int instruct=0x7f070008;
-        public static final int ipel=0x7f070001;
-        public static final int iplist=0x7f070005;
-        public static final int keyboard=0x7f070009;
-        public static final int pref=0x7f07000a;
-        public static final int settings=0x7f070007;
-        public static final int tcp=0x7f070006;
+        public static final int ButtonIP=0x7f070003;
+        public static final int EditTextIP=0x7f070001;
+        public static final int EditTextPort=0x7f070002;
+        public static final int about=0x7f07000a;
+        public static final int close=0x7f07000b;
+        public static final int instruct=0x7f070007;
+        public static final int ipel=0x7f070000;
+        public static final int iplist=0x7f070004;
+        public static final int keyboard=0x7f070008;
+        public static final int pref=0x7f070009;
+        public static final int settings=0x7f070006;
+        public static final int tcp=0x7f070005;
     }
     public static final class layout {
         public static final int instruct=0x7f030000;
@@ -51,7 +55,12 @@ public final class R {
         public static final int about=0x7f05000b;
         public static final int app_name=0x7f050001;
         public static final int hello=0x7f050000;
-        public static final int instruct=0x7f05000e;
+        public static final int instruct_finger=0x7f050011;
+        public static final int instruct_ip=0x7f050010;
+        public static final int instruct_license=0x7f050012;
+        public static final int instruct_port=0x7f05000f;
+        public static final int instruct_server=0x7f05000e;
+        public static final int instruct_signature=0x7f050013;
         public static final int instructs=0x7f050008;
         public static final int ipbar=0x7f050002;
         public static final int ipbutton=0x7f050006;

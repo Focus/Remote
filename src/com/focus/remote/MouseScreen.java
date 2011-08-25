@@ -121,9 +121,6 @@ public class MouseScreen extends Activity implements OnGestureListener, OnKeyLis
 	}
 	@Override
 	public void onDestroy(){
-		/*Intent intent = new Intent(this, RemoteXActivity.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);*/
 		super.onDestroy();
 	}
 	public boolean onKey(View arg0, int arg1, KeyEvent arg2) {
