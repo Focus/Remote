@@ -1,41 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="300px"
-    android:layout_height="fill_parent"
-    android:layout_gravity="center">
+	android:orientation="vertical" android:layout_width="300px"
+	android:layout_height="fill_parent" android:layout_gravity="center">
 
-      <Button
-          android:gravity="center_vertical|center_horizontal"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_margin="10pt"
-          android:text="TCP Connection"
-          android:textColor="#FFFFFF"
-          android:background="@drawable/mainbutton"
-          android:id="@+id/tcp"
-          android:onClick="tcp"
-          android:layout_weight="1" />
-      <Button
-          android:gravity="center_vertical|center_horizontal"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_margin="10pt"
-          android:text="Settings"
-          android:textColor="#FFFFFF"
-          android:background="@drawable/mainbutton"
-          android:id="@+id/settings"
-          android:onClick="pref"
-          android:layout_weight="1" />
-      <Button
-          android:gravity="center_vertical|center_horizontal"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_margin="10pt"
-          android:text="Instructions"
-          android:textColor="#FFFFFF"
-          android:background="@drawable/mainbutton"
-          android:id="@+id/instruct"
-          android:onClick="instructions"
-          android:layout_weight="1"/>
+	<Button android:gravity="center_vertical|center_horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_margin="10pt" android:text="@string/mousebutton"
+		android:textColor="#FFFFFF" android:background="@drawable/mainbutton"
+		android:id="@+id/mouse" android:onClick="buttonClick"
+		android:layout_weight="1" />
+	<Button android:gravity="center_vertical|center_horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_margin="10pt" android:text="@string/remote"
+		android:textColor="#FFFFFF" android:background="@drawable/mainbutton"
+		android:id="@+id/remote" android:onClick="buttonClick"
+		android:layout_weight="1" />
+	<Button android:gravity="center_vertical|center_horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_margin="10pt" android:text="Settings"
+		android:textColor="#FFFFFF" android:background="@drawable/mainbutton"
+		android:id="@+id/settings" android:onClick="buttonClick"
+		android:layout_weight="1" />
+	<Button android:gravity="center_vertical|center_horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_margin="10pt" android:text="Instructions"
+		android:textColor="#FFFFFF" android:background="@drawable/mainbutton"
+		android:id="@+id/instruct" android:onClick="buttonClick"
+		android:layout_weight="1" />
 </LinearLayout>

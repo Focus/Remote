@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, RemoteXActivity!</string>
     <string name="app_name">RemoteX</string>
     <string name="ipbar">IP Address</string>
+    <!-- Titles -->
     <string name="iptitle">Enter Connection Details</string>
+    <string name="preferences">Preferences</string>
+    <string name="instructs">RemoteX Instructions</string>
+	<string name="mainscreen">RemoteX</string>
+	<string name="remoteselector">Remotes Screen</string>
+    
  	<string name="ipformat">Must be of the form 127.0.0.1</string>
 	<string name="ipport">Port</string>
 	<string name="ipbutton">Connect</string>
 	<string name="ipscreen">TCP/IP Connection</string>
-	<string name="instructs">RemoteX Instructions</string>
-	<string name="mainscreen">RemoteX</string>
-	<string name="preferences">Preferences</string>
+	
 	<string name="about">RemoteX\n\n Written by Bati Sengul (Focus)</string>
 	<string name="iplist">Previous Connections</string>
 	<string name="mousescreen">Drag your finger around to move.\n\nTap to click\n\nPress and hold to drag windows around.\n\nGet the keyboard up using the menu button.</string>
+	<string name="mousebutton">Keyboard/Mouse</string>
+	<string name="remote">Remotes</string>
+	<string name="new_remote_list">Add Remote</string>
 	
 	<string name="instruct_server">You need the server installed on your computer before you can use this app.</string>
 	<string name="instruct_port">Default port is 1987 on both the app and the server.</string>

@@ -31,15 +31,18 @@ public final class R {
         public static final int ButtonIP=0x7f070003;
         public static final int EditTextIP=0x7f070001;
         public static final int EditTextPort=0x7f070002;
-        public static final int about=0x7f07000a;
-        public static final int close=0x7f07000b;
-        public static final int instruct=0x7f070007;
+        public static final int about=0x7f07000d;
+        public static final int close=0x7f07000e;
+        public static final int instruct=0x7f070008;
         public static final int ipel=0x7f070000;
         public static final int iplist=0x7f070004;
-        public static final int keyboard=0x7f070008;
-        public static final int pref=0x7f070009;
-        public static final int settings=0x7f070006;
-        public static final int tcp=0x7f070005;
+        public static final int keyboard=0x7f07000b;
+        public static final int mouse=0x7f070005;
+        public static final int new_remote_list=0x7f070009;
+        public static final int pref=0x7f07000c;
+        public static final int remote=0x7f070006;
+        public static final int remotelist=0x7f07000a;
+        public static final int settings=0x7f070007;
     }
     public static final class layout {
         public static final int instruct=0x7f030000;
@@ -47,31 +50,37 @@ public final class R {
         public static final int ipscreen=0x7f030002;
         public static final int mainscreen=0x7f030003;
         public static final int mousescreen=0x7f030004;
+        public static final int remote_selector=0x7f030005;
     }
     public static final class menu {
         public static final int menu=0x7f060000;
     }
     public static final class string {
         public static final int about=0x7f05000b;
-        public static final int app_name=0x7f050001;
-        public static final int hello=0x7f050000;
-        public static final int instruct_finger=0x7f050011;
-        public static final int instruct_ip=0x7f050010;
-        public static final int instruct_license=0x7f050012;
-        public static final int instruct_port=0x7f05000f;
-        public static final int instruct_server=0x7f05000e;
-        public static final int instruct_signature=0x7f050013;
-        public static final int instructs=0x7f050008;
-        public static final int ipbar=0x7f050002;
-        public static final int ipbutton=0x7f050006;
-        public static final int ipformat=0x7f050004;
+        public static final int app_name=0x7f050000;
+        public static final int instruct_finger=0x7f050014;
+        public static final int instruct_ip=0x7f050013;
+        public static final int instruct_license=0x7f050015;
+        public static final int instruct_port=0x7f050012;
+        public static final int instruct_server=0x7f050011;
+        public static final int instruct_signature=0x7f050016;
+        public static final int instructs=0x7f050004;
+        public static final int ipbar=0x7f050001;
+        public static final int ipbutton=0x7f050009;
+        public static final int ipformat=0x7f050007;
         public static final int iplist=0x7f05000c;
-        public static final int ipport=0x7f050005;
-        public static final int ipscreen=0x7f050007;
-        public static final int iptitle=0x7f050003;
-        public static final int mainscreen=0x7f050009;
+        public static final int ipport=0x7f050008;
+        public static final int ipscreen=0x7f05000a;
+        /**  Titles 
+         */
+        public static final int iptitle=0x7f050002;
+        public static final int mainscreen=0x7f050005;
+        public static final int mousebutton=0x7f05000e;
         public static final int mousescreen=0x7f05000d;
-        public static final int preferences=0x7f05000a;
+        public static final int new_remote_list=0x7f050010;
+        public static final int preferences=0x7f050003;
+        public static final int remote=0x7f05000f;
+        public static final int remoteselector=0x7f050006;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

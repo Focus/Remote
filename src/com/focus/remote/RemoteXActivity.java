@@ -12,13 +12,19 @@ public class RemoteXActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainscreen);
 	}
-	public void tcp(View button){
-		startActivity(new Intent(this, Ipscreen.class));
-	}
-	public void instructions(View button){
-		startActivity(new Intent(this, Instruct.class));
-	}
-	public void pref(View button){
-		startActivity(new Intent(this, Preferences.class));
+	public void buttonClick(View button){
+		switch(button.getId()){
+		case R.id.mouse:
+			Intent intent =new Intent(this, Ipscreen.class);
+			intent.putExtra("Direction", 0);
+			startActivity(intent);
+			break;
+		case R.id.settings:
+			startActivity(new Intent(this, Preferences.class));
+			break;
+		case R.id.instruct:
+			startActivity(new Intent(this, Instruct.class));
+			break;
+		}
 	}
 }
