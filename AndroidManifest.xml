@@ -17,6 +17,7 @@
 		<activity android:name=".Instruct" android:label="@string/instructs" />
 		<activity android:name=".Preferences" android:label="@string/preferences" />
 		<activity android:name=".RemoteSelector" android:label="@string/remoteselector" />
+		<activity android:name=".RemoteScreen" android:noHistory="true" />
 
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />

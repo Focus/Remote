@@ -19,6 +19,11 @@ public class RemoteXActivity extends Activity{
 			intent.putExtra("Direction", 0);
 			startActivity(intent);
 			break;
+		case R.id.remote:
+			Intent intent1 =new Intent(this, Ipscreen.class);
+			intent1.putExtra("Direction", 1);
+			startActivity(intent1);
+			break;
 		case R.id.settings:
 			startActivity(new Intent(this, Preferences.class));
 			break;

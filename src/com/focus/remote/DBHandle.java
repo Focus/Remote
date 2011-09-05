@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
-
+/**
+ * @brief A handle for DB (SQLite) operations
+ */
 public class DBHandle  {
 	
 	private static final String DATABASE_NAME = "remote.db";
@@ -30,17 +32,20 @@ public class DBHandle  {
 		OpenHelper helper = new OpenHelper(context);
 		db = helper.getWritableDatabase();
 		ipstatement = db.compileStatement(INSERT_IP);
-		//remotestatement = db.compileStatement(INSERT_REMOTE);  //Crashes!
+		remotestatement = db.compileStatement(INSERT_REMOTE);
 	}
-	
-	public long insertRemote(String title, String search, int play, int stop, int fullscreen, int next, int previous){
-		remotestatement.bindString(1, title);
-		remotestatement.bindString(2, search);
-		remotestatement.bindLong(3, play);
-		remotestatement.bindLong(4, stop);
-		remotestatement.bindLong(5, fullscreen);
-		remotestatement.bindLong(6, next);
-		remotestatement.bindLong(7, previous);
+	/**
+	 * @brief Inserts a remote into the database.
+	 * @return The executing insert result.
+	 */
+	public long insertRemote(Remote remote){
+		remotestatement.bindString(1, remote.title);
+		remotestatement.bindString(2, remote.search);
+		remotestatement.bindLong(3, remote.play);
+		remotestatement.bindLong(4, remote.stop);
+		remotestatement.bindLong(5, remote.fullscreen);
+		remotestatement.bindLong(6, remote.next);
+		remotestatement.bindLong(7, remote.previous);
 		return remotestatement.executeInsert();
 	}
 	
@@ -53,6 +58,21 @@ public class DBHandle  {
 		db.delete(TABLE_NAME_IP, null, null);
 	}
 	
+	public Remote getRemote(String title){
+		Remote ret = new Remote();
+		Cursor c = db.query(TABLE_NAME_REMOTE, null, "title='" + title + "'", null, null, null, null);
+		if(c.moveToFirst()){
+			ret.title = c.getString(1);
+			ret.search = c.getString(2);
+			ret.play = c.getInt(3);
+			ret.stop = c.getInt(4);
+			ret.fullscreen = c.getInt(5);
+			ret.next = c.getInt(6);
+			ret.previous = c.getInt(7);
+		}
+		return ret;
+	}
+	
 	public String[] selectAllIps(){
 		List<String> ret = new ArrayList<String>();
 		Cursor c = db.query(TABLE_NAME_IP, new String[]{"ip"}, null, null, null, null, null);
@@ -61,7 +81,7 @@ public class DBHandle  {
 				ret.add(c.getString(0));
 			}while(c.moveToNext());
 		}
-		if(!c.isClosed() && c != null)
+		//if(!c.isClosed() && c != null)
 			c.close();
 		return (String[]) ret.toArray(new String[0]);
 	}
@@ -74,7 +94,7 @@ public class DBHandle  {
 				ret.add(c.getString(0));
 			}while(c.moveToNext());
 		}
-		if(!c.isClosed() && c != null)
+		//if(!c.isClosed() && c != null)
 			c.close();
 		return (String[]) ret.toArray(new String[0]);
 	}
@@ -91,7 +111,7 @@ public class DBHandle  {
 		Cursor c = db.query(TABLE_NAME_IP, null, "ip='"+name+"'", null, null, null, null);
 		if(c.moveToLast()){
 			if(c.getPosition() >= 0){
-				if(!c.isClosed() && c != null)
+				//if(!c.isClosed() && c != null)
 					c.close();
 				return true;
 			}
@@ -106,7 +126,7 @@ public class DBHandle  {
 		Cursor c = db.query(TABLE_NAME_REMOTE, null, "title='"+name+"'", null, null, null, null);
 		if(c.moveToLast()){
 			if(c.getPosition() >= 0){
-				if(!c.isClosed() && c != null)
+				//if(!c.isClosed() && c != null)
 					c.close();
 				return true;
 			}
@@ -115,6 +135,10 @@ public class DBHandle  {
 		}
 		else
 			return false;
+	}
+	
+	public void close(){
+		db.close();
 	}
 	
 	private static class OpenHelper extends SQLiteOpenHelper{

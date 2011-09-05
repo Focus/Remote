@@ -1,10 +1,6 @@
 package com.focus.remote;
 
-import java.net.Socket;
-
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -16,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 public class RemoteSelector extends Activity{
@@ -31,12 +26,14 @@ public class RemoteSelector extends Activity{
 		setContentView(R.layout.remote_selector);
 		lv = (ListView)findViewById(R.id.remotelist);
 		db = new DBHandle(this);
+		db.deleteAll();
+		db.insertRemote(new Remote("test","spotify", 32, 32, 32, 32, 32));
 		adapter = new ArrayAdapter<String>(this, R.layout.iplist_element, R.id.ipel, db.selectAllRemoteNames());
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(
 				new OnItemClickListener(){
 					public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-						gotoRemote((String) lv.getItemAtPosition(position));
+						displayRemote((String) lv.getItemAtPosition(position));
 					}
 				}
 				);
@@ -52,8 +49,10 @@ public class RemoteSelector extends Activity{
 
 	}
 	
-	private void gotoRemote(String name){
-		
+	public void displayRemote(String title){
+		Intent intent = new Intent(this, RemoteScreen.class);
+		intent.putExtra("Remote", title);
+		startActivity(intent);
 	}
 	
 	@Override
@@ -61,7 +60,7 @@ public class RemoteSelector extends Activity{
 		AdapterContextMenuInfo minfo = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch(item.getItemId()){
 		case 0:
-			gotoRemote(adapter.getItem(minfo.position));
+			displayRemote(adapter.getItem(minfo.position));
 			break;
 		case 1:
 			db.deleteRemote(adapter.getItem(minfo.position));

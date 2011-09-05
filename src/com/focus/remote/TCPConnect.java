@@ -3,6 +3,7 @@ package com.focus.remote;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 import android.app.Application;
 import android.content.SharedPreferences;
@@ -22,9 +23,13 @@ public class TCPConnect extends Application {
 			sock = new Socket(ip,port);
 			out = new PrintWriter(sock.getOutputStream(), true);
 			return true;
-		} catch (Exception e) {
+		} catch (UnknownHostException e){
 			return false;
 		}
+		catch (IOException e){
+			return false;
+		}
+
 	}
 	public Socket getSocket(){
 		return sock;
@@ -33,7 +38,7 @@ public class TCPConnect extends Application {
 		return out;
 	}
 	public int getSens(){return sens;}
-	
+
 	public void sync(){
 		SharedPreferences gprefs = PreferenceManager.getDefaultSharedPreferences(this);
 		sens = gprefs.getInt("sensitivity", 35);
