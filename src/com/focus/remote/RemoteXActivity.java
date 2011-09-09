@@ -1,5 +1,7 @@
 package com.focus.remote;
 
+import java.net.Socket;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,12 +17,30 @@ public class RemoteXActivity extends Activity{
 	public void buttonClick(View button){
 		switch(button.getId()){
 		case R.id.mouse:
-			Intent intent =new Intent(this, Ipscreen.class);
+			TCPConnect app = (TCPConnect) getApplication();
+			Socket sock = app.getSocket();
+			try{
+				if(sock.isConnected()){
+					startActivity(new Intent(this, MouseScreen.class));
+					break;
+				}
+			}catch(Exception e){
+			}
+			Intent intent = new Intent(this, Ipscreen.class);
 			intent.putExtra("Direction", 0);
 			startActivity(intent);
 			break;
 		case R.id.remote:
-			Intent intent1 =new Intent(this, Ipscreen.class);
+			TCPConnect app1 = (TCPConnect) getApplication();
+			Socket sock1 = app1.getSocket();
+			try{
+				if(sock1.isConnected()){
+					startActivity(new Intent(this, RemoteSelector.class));
+					break;
+				}
+			}catch(Exception e){
+			}
+			Intent intent1 = new Intent(this, Ipscreen.class);
 			intent1.putExtra("Direction", 1);
 			startActivity(intent1);
 			break;

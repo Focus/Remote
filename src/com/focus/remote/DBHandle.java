@@ -17,7 +17,7 @@ public class DBHandle  {
 	private static final String DATABASE_NAME = "remote.db";
 	private static final String TABLE_NAME_IP = "ips";
 	private static final String TABLE_NAME_REMOTE = "remotes";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 	
 	private Context context;
 	private SQLiteDatabase db;
@@ -25,7 +25,7 @@ public class DBHandle  {
 	private SQLiteStatement ipstatement;
 	private SQLiteStatement remotestatement;
 	private static final String INSERT_IP = "insert into " + TABLE_NAME_IP + " (ip) values (?)";
-	private static final String INSERT_REMOTE = "insert into " + TABLE_NAME_REMOTE + " (title, search, play, stop, fullscreen, next, previous) values (?,?,?,?,?,?,?)";
+	private static final String INSERT_REMOTE = "insert into " + TABLE_NAME_REMOTE + " (title, search, play, stop, fullscreen, previous, next) values (?,?,?,?,?,?,?)";
 
 	public DBHandle(Context cont){
 		context = cont;
@@ -44,8 +44,8 @@ public class DBHandle  {
 		remotestatement.bindLong(3, remote.play);
 		remotestatement.bindLong(4, remote.stop);
 		remotestatement.bindLong(5, remote.fullscreen);
-		remotestatement.bindLong(6, remote.next);
-		remotestatement.bindLong(7, remote.previous);
+		remotestatement.bindLong(6, remote.previous);
+		remotestatement.bindLong(7, remote.next);
 		return remotestatement.executeInsert();
 	}
 	
@@ -149,8 +149,8 @@ public class DBHandle  {
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			db.execSQL("CREATE TABLE " + TABLE_NAME_IP + "(id INTEGER PRIMARY KEY, ip TEXT)");
-			db.execSQL("CREATE TABLE " + TABLE_NAME_REMOTE + "(id INTEGER PRIMARY KEY, title TEXT, search TEXT, play INTEGER, stop INTEGER, fullscreen INTEGER, previous INTEGER, next INTEGER)");
+			db.execSQL("CREATE TABLE " + TABLE_NAME_IP + " (id INTEGER PRIMARY KEY, ip TEXT)");
+			db.execSQL("CREATE TABLE " + TABLE_NAME_REMOTE + " (id INTEGER PRIMARY KEY, title TEXT, search TEXT, play INTEGER, stop INTEGER, fullscreen INTEGER, previous INTEGER, next INTEGER)");
 		}
 
 		@Override

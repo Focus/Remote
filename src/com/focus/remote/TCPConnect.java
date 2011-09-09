@@ -3,6 +3,7 @@ package com.focus.remote;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 
 import android.app.Application;
@@ -21,14 +22,24 @@ public class TCPConnect extends Application {
 	public boolean connect(String ip, int port){
 		try {
 			sock = new Socket(ip,port);
+		} catch (SocketException e){
+			return false;
+		} catch(UnknownHostException e){
+			return false;
+		} catch(IOException e){
+			return false;
+		}
+		
+		try{
 			out = new PrintWriter(sock.getOutputStream(), true);
-			return true;
-		} catch (UnknownHostException e){
+		} catch (SocketException e){
+			return false;
+		} catch(UnknownHostException e){
+			return false;
+		} catch(IOException e){
 			return false;
 		}
-		catch (IOException e){
-			return false;
-		}
+		return true;
 
 	}
 	public Socket getSocket(){

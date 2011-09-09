@@ -26,8 +26,6 @@ public class RemoteSelector extends Activity{
 		setContentView(R.layout.remote_selector);
 		lv = (ListView)findViewById(R.id.remotelist);
 		db = new DBHandle(this);
-		db.deleteAll();
-		db.insertRemote(new Remote("test","spotify", 32, 32, 32, 32, 32));
 		adapter = new ArrayAdapter<String>(this, R.layout.iplist_element, R.id.ipel, db.selectAllRemoteNames());
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(
