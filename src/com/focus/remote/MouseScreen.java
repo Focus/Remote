@@ -77,7 +77,7 @@ public class MouseScreen extends Activity implements OnGestureListener, OnKeyLis
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu, menu);
+	    inflater.inflate(R.menu.mouse_menu, menu);
 	    return true;
 	}
 	@Override
@@ -91,9 +91,6 @@ public class MouseScreen extends Activity implements OnGestureListener, OnKeyLis
 	    case R.id.pref:
 	    	startActivity(new Intent(this, Preferences.class));
 	    	return true;
-	    case R.id.about:
-	    	new AlertDialog.Builder(this).setTitle("About").setMessage(R.string.about).show();
-	        return true;
 	    case R.id.close:
 	    	TCPConnect app = (TCPConnect) getApplication();
 	    	app.flush();

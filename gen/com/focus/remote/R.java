@@ -26,18 +26,21 @@ public final class R {
         public static final int osi=0x7f02000c;
         public static final int pause=0x7f02000d;
         public static final int play=0x7f02000e;
-        public static final int pointing_finger=0x7f02000f;
-        public static final int seek_back=0x7f020010;
-        public static final int seek_forward=0x7f020011;
-        public static final int stop=0x7f020012;
-        public static final int xbutton=0x7f020013;
+        public static final int play_press=0x7f02000f;
+        public static final int playbutton=0x7f020010;
+        public static final int pointing_finger=0x7f020011;
+        public static final int seek_back=0x7f020012;
+        public static final int seek_forward=0x7f020013;
+        public static final int stop=0x7f020014;
+        public static final int stop_press=0x7f020015;
+        public static final int stopbutton=0x7f020016;
+        public static final int xbutton=0x7f020017;
     }
     public static final class id {
         public static final int ButtonIP=0x7f070003;
         public static final int EditTextIP=0x7f070001;
         public static final int EditTextPort=0x7f070002;
-        public static final int about=0x7f070023;
-        public static final int close=0x7f070024;
+        public static final int close=0x7f070023;
         public static final int edit_display_fullscreen=0x7f070016;
         public static final int edit_display_next=0x7f070012;
         public static final int edit_display_play=0x7f07000e;
@@ -62,12 +65,12 @@ public final class R {
         public static final int remote=0x7f070006;
         public static final int remote_discard=0x7f070018;
         public static final int remote_fullscreen=0x7f07001e;
-        public static final int remote_pause=0x7f07001a;
+        public static final int remote_pause=0x7f07001d;
         public static final int remote_play=0x7f070019;
         public static final int remote_save=0x7f070017;
         public static final int remote_seek_back=0x7f07001b;
         public static final int remote_seek_forward=0x7f07001c;
-        public static final int remote_stop=0x7f07001d;
+        public static final int remote_stop=0x7f07001a;
         public static final int remotelist=0x7f070020;
         public static final int settings=0x7f070007;
     }
@@ -82,7 +85,8 @@ public final class R {
         public static final int remote_selector=0x7f030007;
     }
     public static final class menu {
-        public static final int menu=0x7f060000;
+        public static final int mouse_menu=0x7f060000;
+        public static final int remote_menu=0x7f060001;
     }
     public static final class string {
         public static final int about=0x7f05000b;
