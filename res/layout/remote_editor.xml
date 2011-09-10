@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	<ScrollView android:layout_height="fill_parent"
+		android:layout_width="fill_parent">
+		<LinearLayout android:clickable="false"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_title">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Title" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_title"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_search">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Search Parameter" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_search"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_play">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Play" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_play"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_previous">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Previous" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_previous"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_next">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Next" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_next"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_stop">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Stop" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_stop"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+
+			<LinearLayout android:clickable="true"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/edit_select_fullscreen">
+				<TextView android:textSize="12pt" android:textStyle="bold"
+					android:text="Fullscreen" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:id="@+id/edit_display_fullscreen"
+					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
+					android:layout_height="wrap_content" />
+				<TextView android:background="#3f3f3f"
+					android:layout_width="fill_parent" android:layout_height="2pt" />
+			</LinearLayout>
+
+		</LinearLayout>
+	</ScrollView>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_gravity="bottom" android:layout_height="wrap_content"
+		android:layout_width="fill_parent">
+		<Button android:id="@+id/remote_save" android:text="Save"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:onClick="exitButtonPress" android:layout_weight="1" />
+		<Button android:id="@+id/remote_discard" android:text="Discard"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:onClick="exitButtonPress" android:layout_weight="1" />
+	</LinearLayout>
+</LinearLayout>

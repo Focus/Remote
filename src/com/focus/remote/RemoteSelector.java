@@ -53,12 +53,20 @@ public class RemoteSelector extends Activity{
 		startActivity(intent);
 	}
 	
+	public void addNewRemote(View v){
+		Intent intent = new Intent(this, RemoteEditor.class);
+		intent.putExtra("Remote", "");
+		startActivity(intent);
+	}
+	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo minfo = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch(item.getItemId()){
 		case 0:
-			displayRemote(adapter.getItem(minfo.position));
+			Intent intent = new Intent(this, RemoteEditor.class);
+			intent.putExtra("Remote", adapter.getItem(minfo.position));
+			startActivity(intent);
 			break;
 		case 1:
 			db.deleteRemote(adapter.getItem(minfo.position));
@@ -68,6 +76,14 @@ public class RemoteSelector extends Activity{
 			break;
 		}
 		return super.onContextItemSelected(item);	 
+	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		adapter = new ArrayAdapter<String>(this, R.layout.iplist_element, R.id.ipel, db.selectAllRemoteNames());
+		lv.setAdapter(adapter);
+		lv.invalidateViews();
 	}
 	
 }

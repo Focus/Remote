@@ -21,6 +21,9 @@
 	<string name="remote">Remotes</string>
 	<string name="new_remote_list">Add Remote</string>
 	
+	<string name="save">Save</string>
+	<string name="discard">Discard</string>
+	
 	<string name="instruct_server">You need the server installed on your computer before you can use this app.</string>
 	<string name="instruct_port">Default port is 1987 on both the app and the server.</string>
 	<string name="instruct_ip">To find your ip use  ifconfig  on *nix and  ipconfig  on Windows.</string>
