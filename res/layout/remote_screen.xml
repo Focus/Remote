@@ -17,11 +17,11 @@
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal" android:layout_width="fill_parent"
 		android:layout_height="0px" android:layout_weight="1">
-		<ImageView android:src="@drawable/playbutton" android:id="@+id/remote_seek_back"
+		<ImageView android:src="@drawable/seekbackbutton" android:id="@+id/remote_seek_back"
 			android:layout_height="fill_parent" android:layout_width="0px"
 			android:layout_weight="1" android:layout_margin="8pt" android:clickable="true"
 			android:onClick="sendEvent" />
-		<ImageView android:src="@drawable/playbutton" android:id="@+id/remote_seek_forward"
+		<ImageView android:src="@drawable/seekforwardbutton" android:id="@+id/remote_seek_forward"
 			android:layout_height="fill_parent" android:layout_width="0px"
 			android:layout_weight="1" android:layout_margin="8pt" android:clickable="true"
 			android:onClick="sendEvent" />
@@ -29,13 +29,12 @@
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal" android:layout_width="fill_parent"
 		android:layout_height="0px" android:layout_weight="1">
+		<ImageView android:src="@drawable/fullscreenbutton" android:id="@+id/remote_fullscreen"
+			android:layout_height="fill_parent" android:layout_width="0px"
+			android:layout_weight="1" android:layout_margin="8pt" android:clickable="true"
+			android:onClick="sendEvent" />
 		<ImageView android:src="@drawable/playbutton" android:id="@+id/remote_pause"
 			android:layout_height="fill_parent" android:layout_width="0px"
-			android:layout_weight="1" android:layout_margin="8pt" android:clickable="true"
-			android:onClick="sendEvent" />
-		<ImageView android:src="@drawable/playbutton" android:id="@+id/remote_fullscreen"
-			android:layout_height="fill_parent" android:layout_width="0px"
-			android:layout_weight="1" android:layout_margin="8pt" android:clickable="true"
-			android:onClick="sendEvent" />
+			android:layout_weight="1" android:layout_margin="8pt" android:clickable="false" />
 	</LinearLayout>
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.focus.remote;
 
+import java.net.Socket;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +19,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class RemoteSelector extends Activity{
 
@@ -104,14 +107,16 @@ public class RemoteSelector extends Activity{
 	    	return true;
 	    case R.id.close:
 	    	TCPConnect app = (TCPConnect) getApplication();
-	    	app.flush();
+			Socket sock = app.getSocket();
+			try{
+				if(sock.isConnected())
+					app.flush();
+			}catch(Exception e){
+			}
 	    	this.finish();
 	    	return true;
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }
-	}
-	
-	
-	
+	}	
 }
