@@ -1,8 +1,6 @@
 package com.focus.remote;
 
 
-import java.util.Arrays;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,14 +59,31 @@ public class RemoteEditor extends Activity{
 	@Override
 	protected Dialog onCreateDialog(final int id){
 		final EditText edit = new EditText(this);
+		final CheckBox ctrlCheck = new CheckBox(this);
+		ctrlCheck.setText("CTRL");
+		final CheckBox altCheck = new CheckBox(this);
+		altCheck.setText("ALT");
+		final LinearLayout ll = new LinearLayout(this);
+		ll.addView(edit);
+		if(id != R.id.edit_select_title && id != R.id.edit_select_search){
+			ll.addView(ctrlCheck);
+			ll.addView(altCheck);
+		}
 		return new AlertDialog.Builder(this)
 		//.setIconAttribute(android.R.attr.alertDialogIcon)
 		.setTitle("Generic")
-		.setView(edit)
+		.setView(ll)
 		.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				if(edit.getText().length() <= 0)
 					return;
+				String mods = "";
+				if(ctrlCheck.isChecked())
+					mods += "C";
+				if(altCheck.isChecked())
+					mods += "A";
+				if(mods != "")
+					mods += "^";
 				switch(id){
 				case R.id.edit_select_title:
 					remote.title = edit.getText().toString();
@@ -76,19 +92,19 @@ public class RemoteEditor extends Activity{
 					remote.search = edit.getText().toString();
 					break;
 				case R.id.edit_select_play:
-					remote.play = (int) edit.getText().toString().toCharArray()[0];
+					remote.play = mods + String.valueOf( (int) edit.getText().toString().toCharArray()[0] );
 					break;
 				case R.id.edit_select_previous:
-					remote.previous = (int) edit.getText().toString().toCharArray()[0];
+					remote.previous = mods + String.valueOf( (int) edit.getText().toString().toCharArray()[0] );
 					break;
 				case R.id.edit_select_stop:
-					remote.stop = (int) edit.getText().toString().toCharArray()[0];
+					remote.stop = mods + String.valueOf( (int) edit.getText().toString().toCharArray()[0] );
 					break;
 				case R.id.edit_select_next:
-					remote.next = (int) edit.getText().toString().toCharArray()[0];
+					remote.next = mods + String.valueOf( (int) edit.getText().toString().toCharArray()[0] );
 					break;
 				case R.id.edit_select_fullscreen:
-					remote.fullscreen = (int) edit.getText().toString().toCharArray()[0];
+					remote.fullscreen = mods + String.valueOf( (int) edit.getText().toString().toCharArray()[0] );
 					break;
 				}
 				updateDisplay();
@@ -135,19 +151,19 @@ public class RemoteEditor extends Activity{
 		tv.setText(remote.search);
 		
 		tv = (TextView) findViewById(R.id.edit_display_play);
-		tv.setText(Arrays.toString(new char[]{(char) remote.play}));
+		tv.setText(remote.modifierParser(remote.play)[0]+remote.modifierParser(remote.play)[1]);
 
 		tv = (TextView) findViewById(R.id.edit_display_previous);
-		tv.setText(Arrays.toString(new char[]{(char) remote.previous}));
+		tv.setText(remote.modifierParser(remote.previous)[0]+remote.modifierParser(remote.previous)[1]);
 
 		tv = (TextView) findViewById(R.id.edit_display_next);
-		tv.setText(Arrays.toString(new char[]{(char) remote.next}));
+		tv.setText(remote.modifierParser(remote.next)[0]+remote.modifierParser(remote.next)[1]);
 
 		tv = (TextView) findViewById(R.id.edit_display_stop);
-		tv.setText(Arrays.toString(new char[]{(char) remote.stop}));
+		tv.setText(remote.modifierParser(remote.stop)[0]+remote.modifierParser(remote.stop)[1]);
 
 		tv = (TextView) findViewById(R.id.edit_display_fullscreen);
-		tv.setText(Arrays.toString(new char[]{(char) remote.fullscreen}));
+		tv.setText(remote.modifierParser(remote.fullscreen)[0]+remote.modifierParser(remote.fullscreen)[1]);
 	}
 
 }

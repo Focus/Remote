@@ -17,7 +17,7 @@ public class DBHandle  {
 	private static final String DATABASE_NAME = "remote.db";
 	private static final String TABLE_NAME_IP = "ips";
 	private static final String TABLE_NAME_REMOTE = "remotes";
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 	
 	private Context context;
 	private SQLiteDatabase db;
@@ -41,11 +41,11 @@ public class DBHandle  {
 	public long insertRemote(Remote remote){
 		remotestatement.bindString(1, remote.title);
 		remotestatement.bindString(2, remote.search);
-		remotestatement.bindLong(3, remote.play);
-		remotestatement.bindLong(4, remote.stop);
-		remotestatement.bindLong(5, remote.fullscreen);
-		remotestatement.bindLong(6, remote.previous);
-		remotestatement.bindLong(7, remote.next);
+		remotestatement.bindString(3, remote.play);
+		remotestatement.bindString(4, remote.stop);
+		remotestatement.bindString(5, remote.fullscreen);
+		remotestatement.bindString(6, remote.previous);
+		remotestatement.bindString(7, remote.next);
 		return remotestatement.executeInsert();
 	}
 	
@@ -64,11 +64,11 @@ public class DBHandle  {
 		if(c.moveToFirst()){
 			ret.title = c.getString(1);
 			ret.search = c.getString(2);
-			ret.play = c.getInt(3);
-			ret.stop = c.getInt(4);
-			ret.fullscreen = c.getInt(5);
-			ret.next = c.getInt(6);
-			ret.previous = c.getInt(7);
+			ret.play = c.getString(3);
+			ret.stop = c.getString(4);
+			ret.fullscreen = c.getString(5);
+			ret.previous = c.getString(6);
+			ret.next = c.getString(7);
 		}
 		return ret;
 	}
@@ -150,7 +150,7 @@ public class DBHandle  {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL("CREATE TABLE " + TABLE_NAME_IP + " (id INTEGER PRIMARY KEY, ip TEXT)");
-			db.execSQL("CREATE TABLE " + TABLE_NAME_REMOTE + " (id INTEGER PRIMARY KEY, title TEXT, search TEXT, play INTEGER, stop INTEGER, fullscreen INTEGER, previous INTEGER, next INTEGER)");
+			db.execSQL("CREATE TABLE " + TABLE_NAME_REMOTE + " (id INTEGER PRIMARY KEY, title TEXT, search TEXT, play TEXT, stop TEXT, fullscreen TEXT, previous TEXT, next TEXT)");
 		}
 
 		@Override
