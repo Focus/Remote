@@ -1,12 +1,13 @@
 package com.focus.remote;
 
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -19,6 +20,7 @@ public class RemoteEditor extends Activity{
 
 	private Remote remote;
 	String remoteName;
+	@TargetApi(11)
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -36,10 +38,13 @@ public class RemoteEditor extends Activity{
 			remote = new Remote();
 		
 		updateDisplay();
-
+		final FragmentManager fm = getFragmentManager();
+        final RemoteEditFragment editNameDialog = new RemoteEditFragment();
 		OnClickListener ocl = new View.OnClickListener() {
 			public void onClick(View v) {
-				showDialog(v.getId());
+				//showDialog(v.getId());
+				
+		        editNameDialog.show(fm, "fragment_edit_name");
 				//To change the colour when the list item is pressed.
 				v.setBackgroundResource(android.R.drawable.list_selector_background);
 			}
@@ -164,6 +169,10 @@ public class RemoteEditor extends Activity{
 
 		tv = (TextView) findViewById(R.id.edit_display_fullscreen);
 		tv.setText(remote.modifierParser(remote.fullscreen)[0]+remote.modifierParser(remote.fullscreen)[1]);
+	}
+	public void onFinishEditDialog(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

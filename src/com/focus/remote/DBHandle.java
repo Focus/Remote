@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-import android.util.Log;
 /**
  * @brief A handle for DB (SQLite) operations
  */
@@ -70,6 +69,7 @@ public class DBHandle  {
 			ret.previous = c.getString(6);
 			ret.next = c.getString(7);
 		}
+		c.close();
 		return ret;
 	}
 	

@@ -6,6 +6,7 @@
         android:summary="Sensitivity of the mouse"
         android:dialogMessage="Mouse sensitivity"
         android:defaultValue="35"
+        android:persistent="true"
         android:text=""
         android:max="150"/>
 </PreferenceScreen>

@@ -103,7 +103,7 @@ public class MouseScreen extends Activity implements OnGestureListener, OnKeyLis
 	@Override
 	public boolean onKeyUp(int keycode, KeyEvent kev){
 		if(keycode == 67) //Backspace
-			sendString(-1987+".");
+			sendString(8 +".");
 		if(kev.getDisplayLabel() != '\u0000')
 			sendString(kev.getUnicodeChar()+".");
 		return super.onKeyUp(keycode, kev);

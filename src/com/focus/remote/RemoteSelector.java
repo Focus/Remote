@@ -118,5 +118,9 @@ public class RemoteSelector extends Activity{
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }
-	}	
+	}
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+	}
 }
