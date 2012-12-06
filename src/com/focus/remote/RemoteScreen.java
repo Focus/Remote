@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ public class RemoteScreen extends Activity{
 	
 	private void sendAction(Remote.RemoteAction act){
 		try{
+			Log.d("Sending",remote.getProtocol(act));
 			out.println(remote.getProtocol(act));
 		}catch(Exception e){
 			new AlertDialog.Builder(this).setTitle("Error!").setMessage(e.getMessage()).show();

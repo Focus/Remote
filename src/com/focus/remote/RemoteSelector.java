@@ -3,7 +3,6 @@ package com.focus.remote;
 import java.net.Socket;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -13,13 +12,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class RemoteSelector extends Activity{
 
@@ -47,7 +44,7 @@ public class RemoteSelector extends Activity{
 			public void onCreateContextMenu(ContextMenu cm, View v, ContextMenuInfo cmi) {
 				String[] menuitems = new String[]{"Edit", "Forget"};
 				for (int i = 0; i<menuitems.length; i++) {
-					cm.add(cm.NONE, i, i, menuitems[i]);
+					cm.add(ContextMenu.NONE, i, i, menuitems[i]);
 				}
 			}	        	
 		});
@@ -122,5 +119,6 @@ public class RemoteSelector extends Activity{
 	@Override
 	public void onDestroy(){
 		super.onDestroy();
+		db.close();
 	}
 }

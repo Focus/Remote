@@ -1,108 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
-	<ScrollView android:layout_height="wrap_content"
-		android:layout_width="fill_parent">
-		<LinearLayout android:clickable="false"
-			android:orientation="vertical" android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_title">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Title" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_title"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_search">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Search Parameter" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_search"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_play">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Play" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_play"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_previous">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Previous" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_previous"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_next">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Next" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_next"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_stop">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Stop" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_stop"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp" >
 
-			<LinearLayout android:clickable="true"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:id="@+id/edit_select_fullscreen">
-				<TextView android:textSize="12pt" android:textStyle="bold"
-					android:text="Fullscreen" android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:id="@+id/edit_display_fullscreen"
-					android:textSize="9pt" android:text=" " android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<TextView android:background="#3f3f3f"
-					android:layout_width="fill_parent" android:layout_height="2pt" />
-			</LinearLayout>
-	<LinearLayout android:orientation="horizontal"
-		android:layout_gravity="bottom" android:layout_height="wrap_content"
-		android:layout_width="fill_parent">
-		<Button android:id="@+id/remote_save" android:text="Save"
-			android:layout_height="wrap_content" android:layout_width="wrap_content"
-			android:onClick="exitButtonPress" android:layout_weight="1" />
-		<Button android:id="@+id/remote_discard" android:text="Discard"
-			android:layout_height="wrap_content" android:layout_width="wrap_content"
-			android:onClick="exitButtonPress" android:layout_weight="1" />
-	</LinearLayout>
-		</LinearLayout>
-	</ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/remote_edit_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="7pt" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_parameter"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/remote_edit_search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="7pt" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/remote_edit_play"
+                android:maxLength="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:inputType="text"
+                android:textSize="7pt"
+                android:width="10dp" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_play_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ctrl" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_play_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/alt" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/previous"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/remote_edit_previous"
+                android:maxLength="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:inputType="text"
+                android:textSize="7pt"
+                android:width="10dp" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_previous_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ctrl" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_previous_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/alt" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/remote_edit_next"
+                android:maxLength="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:inputType="text"
+                android:textSize="7pt"
+                android:width="10dp" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_next_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ctrl" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_next_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/alt" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stop"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/remote_edit_stop"
+                android:maxLength="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:inputType="text"
+                android:textSize="7pt"
+                android:width="10dp" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_stop_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ctrl" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_stop_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/alt" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/full_screen"
+            android:textSize="12pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/remote_edit_fs"
+                android:maxLength="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:inputType="text"
+                android:textSize="7pt"
+                android:width="10dp" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_fs_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ctrl" />
+
+            <CheckBox
+                android:id="@+id/remote_edit_fs_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/alt" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2pt"
+            android:background="#3f3f3f" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/remote_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="exitButtonPress"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/remote_discard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="exitButtonPress"
+                android:text="@string/discard" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

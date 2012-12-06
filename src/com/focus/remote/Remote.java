@@ -1,6 +1,6 @@
 package com.focus.remote;
 
-import android.content.Context;
+
 
 
 /**
@@ -23,6 +23,13 @@ public class Remote {
 	}
 	
 	public Remote(){
+		title = "";
+		search = "";
+		play = "";
+		previous = "";
+		next = "";
+		stop = "";
+		fullscreen = "";
 	}
 	
 	public Remote(String title, String search, String play, String stop, String fullscreen, String next, String previous){
@@ -37,10 +44,23 @@ public class Remote {
 	/**
 	 * @brief Returns the current protocol.
 	 * 
-	 * The protocol is subject to change.
+	 * The protocol is subject to change. Currently it is [modifiers]^[letter in unicode] > [search parameter].
+	 * 
+	 * Modifiers can be C for CTRL or A for ALT or possibly both. For example, sending CTRL+ALT+w to firefox would be
+	 * <code>
+	 * CA^119>firefox.
+	 * </code>
 	 */
 	private String protocol(String action){
-		return action + ">" + this.search + ".";
+		int i = action.indexOf("^");
+		if(i != -1){
+			String uni = Integer.toString( (int) action.substring(i+1).toCharArray()[0] );
+			return action.substring(0,i) + uni + ">" + this.search + ".";
+		}
+		else{
+			String uni = Integer.toString( (int) action.toCharArray()[0] );
+			return uni + ">" + this.search + ".";
+		}
 	}
 	
 	public String getProtocol(RemoteAction action){
@@ -58,30 +78,5 @@ public class Remote {
 		default:
 			return ".";
 		}
-	}
-	
-	public String[] modifierParser(String item){
-		if(item == null)
-			return new String[]{"",""};
-		String[] ret = new String[2];
-		int i;
-		if( (i = item.indexOf("^")) != -1){
-			String mods = item.substring(0,i);
-			ret[0] = "";
-			for(int j = 0; j < mods.length(); j++){
-				if(mods.charAt(j) == 'C')
-					ret[0] += "CTRL ";
-				else if(mods.charAt(j) == 'A')
-					ret[0] += "ALT ";
-			}
-			int num = Integer.parseInt(item.substring(i+1));
-			ret[1] = String.valueOf( ((char) num) );
-		}
-		else{
-			ret[0] = "";
-			int num = Integer.parseInt(item);
-			ret[1] = "" + (char)num;
-		}
-		return ret;
 	}
 }

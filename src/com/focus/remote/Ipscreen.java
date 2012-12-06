@@ -7,9 +7,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
@@ -19,7 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 public class Ipscreen extends Activity{
 
@@ -47,7 +47,7 @@ public class Ipscreen extends Activity{
 			public void onCreateContextMenu(ContextMenu cm, View v, ContextMenuInfo cmi) {
 				String[] menuitems = new String[]{"Connect", "Forget"};
 				for (int i = 0; i<menuitems.length; i++) {
-					cm.add(cm.NONE, i, i, menuitems[i]);
+					cm.add(Menu.NONE, i, i, menuitems[i]);
 				}
 			}	        	
 		});
@@ -134,5 +134,10 @@ public class Ipscreen extends Activity{
 				goTo();
 		}catch(Exception e){
 		}
+	}
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+		db.close();
 	}
 }

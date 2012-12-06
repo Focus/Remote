@@ -20,6 +20,7 @@ public class DBHandle  {
 	
 	private Context context;
 	private SQLiteDatabase db;
+	private OpenHelper helper;
 	
 	private SQLiteStatement ipstatement;
 	private SQLiteStatement remotestatement;
@@ -28,7 +29,7 @@ public class DBHandle  {
 
 	public DBHandle(Context cont){
 		context = cont;
-		OpenHelper helper = new OpenHelper(context);
+		helper = new OpenHelper(context);
 		db = helper.getWritableDatabase();
 		ipstatement = db.compileStatement(INSERT_IP);
 		remotestatement = db.compileStatement(INSERT_REMOTE);
@@ -138,6 +139,8 @@ public class DBHandle  {
 	}
 	
 	public void close(){
+		if(helper != null)
+			helper.close();
 		db.close();
 	}
 	
