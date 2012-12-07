@@ -51,14 +51,17 @@ public class Remote {
 	 * CA^119>firefox.
 	 * </code>
 	 */
-	private String protocol(String action){
+	public String protocol(String action){
 		int i = action.indexOf("^");
+		if(action == null || action.length()<1)
+			return null;
 		if(i != -1){
-			String uni = Integer.toString( (int) action.substring(i+1).toCharArray()[0] );
-			return action.substring(0,i) + uni + ">" + this.search + ".";
+			
+			String uni = Integer.toString( action.charAt(i+1));
+			return action.substring(0,i+1) + uni + ">" + this.search + ".";
 		}
 		else{
-			String uni = Integer.toString( (int) action.toCharArray()[0] );
+			String uni = Integer.toString( action.charAt(0) );
 			return uni + ">" + this.search + ".";
 		}
 	}
