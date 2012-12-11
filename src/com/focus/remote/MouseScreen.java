@@ -32,7 +32,7 @@ public class MouseScreen extends Activity implements OnGestureListener, OnKeyLis
         TCPConnect app = (TCPConnect) getApplication();
         out = app.getPrintWriter();
         sens = ((double) app.getSens())/10;
-        gesture = new GestureDetector(this);
+        gesture = new GestureDetector(this, this);
         setContentView(R.layout.mousescreen);
         drag = false;
     }

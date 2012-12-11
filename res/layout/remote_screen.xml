@@ -72,19 +72,10 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_margin="8dp"
-            android:layout_weight="1"
             android:clickable="true"
             android:onClick="sendEvent"
             android:src="@drawable/fullscreenbutton" />
 
-        <ImageView
-            android:id="@+id/remote_pause"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:src="@drawable/playbutton" />
     </LinearLayout>
 
 </LinearLayout>

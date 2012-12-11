@@ -79,17 +79,16 @@ public class Ipscreen extends Activity{
 		} catch(Exception e){
 			port = 1987;
 		}
-		ProgressDialog dialog = ProgressDialog.show(this, "","Connecting to "+ip+":"+port+"...", true);
+
 		TCPConnect app = (TCPConnect) getApplication();
 		if(app.connect(ip, port)){
-			dialog.dismiss();
 			if(!db.existsIp(ip + ":" + port))
 				db.insertIp(ip + ":" + port);
 			goTo();
 		}
 		else
-			new AlertDialog.Builder(this).setTitle("Error!").setMessage("Unable to connect. Are you sure the server is running on"+ip+":"+port +"?").show();
-		dialog.dismiss();
+			new AlertDialog.Builder(this).setTitle("Error!").setMessage("Unable to connect. Are you sure the server is running on "+ip+":"+port +" ?").show();
+
 	}
 	public void connectByString(String in){
 		int port = 1987;

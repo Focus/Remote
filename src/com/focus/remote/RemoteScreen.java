@@ -43,9 +43,6 @@ public class RemoteScreen extends Activity{
 		case R.id.remote_play:
 			sendAction(Remote.RemoteAction.PLAY);
 			break;
-		case R.id.remote_pause:
-			sendAction(Remote.RemoteAction.PLAY);
-			break;
 		case R.id.remote_seek_back:
 			sendAction(Remote.RemoteAction.PREVIOUS);
 			break;
